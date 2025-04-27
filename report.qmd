@@ -1,0 +1,672 @@
+---
+title: "Global Education Disparities: A UNICEF Data Analysis"
+subtitle: "Chitranadh Pradeep Yellapu Student ID-47798"
+format: 
+    html:
+        output-file: index.html
+        css: style.css
+        format: article
+        code-fold: true
+        code-summary: "show/hide code"
+        toc: true
+        toc-title: " Core Insights "
+        grid:
+            body-width: 950px 
+        number-sections: false
+project:
+    type: website
+    output-dir: docs
+    page-layout: full
+
+jupyter: python3
+---
+
+
+
+<div id="particles-js"></div>
+
+
+# Introduction
+```{=html}
+<div class="narrative-container">
+  <p>
+    Education is a powerful tool for individual empowerment and global development. Yet, millions of children around the world remain out of school, especially in low- and middle-income countries. Between 2014 and 2022, challenges such as economic inequality, political instability, gender discrimination, and rapid population growth have continued to limit access to education. Although there have been improvements in some regions, significant gaps still persist, particularly among marginalized groups like girls and children in rural areas.
+
+    In this report, we will explore key factors that influence out-of-school rates and how these patterns have changed over time. The following visualizations will help illustrate:
+  </p>
+  <ul>
+    <li><strong></strong> Global trends in out-of-school rates from 2014 to 2022
+
+</li>
+    <li><strong></strong> Gender disparities in education access</li>
+    <li><strong></strong> The relationship between population size and out-of-school rates</li>
+    <li><strong></strong> Progress and setbacks across different economic groups</li>
+  </ul>
+  <p>
+These insights will provide a clearer understanding of where interventions are most urgently needed.
+  </p>  
+</div>
+```
+# Performance Metric
+```{python}
+import pandas as pd
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+df = pd.read_csv('unicef_indicator_1.csv')
+avg_value    = df['obs_value'].mean()
+max_value    = df['obs_value'].max()
+max_country  = df.loc[df['obs_value'].idxmax(), 'country']
+min_value    = df['obs_value'].min()
+min_country  = df.loc[df['obs_value'].idxmin(), 'country']
+palette = [
+    '#03045e', '#023e8a', '#0077b6',
+    '#0096c7', '#00b4d8', '#48cae4',
+    '#90e0ef', '#ade8f4', '#caf0f8'
+]
+
+fig = make_subplots(
+    rows=1, cols=3,
+    specs=[[{'type':'indicator'}, {'type':'indicator'}, {'type':'indicator'}]]
+)
+
+def create_gauge(value, title, subtitle=""):
+    return go.Indicator(
+        mode="gauge+number",
+        value=value,
+        title={
+            'text': f"<b>{title}</b><br><span style='font-size:11px'>{subtitle}</span>",
+            'font': {'size': 14, 'color': '#03045e'}
+        },
+        number={'font': {'size': 32, 'color': '#03045e'}},
+        gauge={
+            'axis': {
+                'range': [0, 100],
+                'tickwidth': 1,
+                'tickcolor': '#90e0ef',
+                'tickfont': {'color': '#03045e', 'size': 9},
+                'tickmode': 'array',
+                'tickvals': [0, 25, 50, 75, 100],
+                'ticktext': ['0', '25', '50', '75', '100']
+            },
+            'bar':     {'color': "#4361ee", 'thickness': 0.30},
+            'bgcolor': "rgba(0,0,0,0)",
+            'borderwidth': 1,
+            'bordercolor': "#0096c7",
+            'steps': [
+                {'range': [0, 11],  'color': palette[0]},
+                {'range': [11, 22], 'color': palette[1]},
+                {'range': [22, 33], 'color': palette[2]},
+                {'range': [33, 44], 'color': palette[3]},
+                {'range': [44, 55], 'color': palette[4]},
+                {'range': [55, 66], 'color': palette[5]},
+                {'range': [66, 77], 'color': palette[6]},
+                {'range': [77, 88], 'color': palette[7]},
+                {'range': [88, 100],'color': palette[8]},
+            ],
+            'threshold': {
+                'line': {'color': "#9a031e", 'width': 6},
+                'thickness': 0.8,
+                'value': value
+            }
+        }
+    )
+fig.add_trace(create_gauge(avg_value, "Average Out-of-School (%)"),           row=1, col=1)
+fig.add_trace(create_gauge(max_value, "Highest Out-of-School (%)", max_country), row=1, col=2)
+fig.add_trace(create_gauge(min_value, "Lowest Out-of-School (%)",  min_country), row=1, col=3)
+
+fig.update_layout(
+    paper_bgcolor='rgba(0,0,0,0)',
+    plot_bgcolor='rgba(0,0,0,0)',
+    height=300,
+    width=900,
+    margin=dict(t=40, b=40, l=40, r=40),
+    font={'color': "#03045e", 'family': "Arial Black"},
+)
+fig.show()
+```
+
+# Where Are Children Missing School? Global Pre-Enrollment Gaps
+
+```{=html}
+<div class="narrative-container">
+  <p>
+    In 2019, the global average out-of-school rate stood at <strong>≈ 14%</strong>, but regional extremes tell a starker story:Chad (86.1 %), Niger (76.2 %), and Samoa (64.9 %) top the list of exclusion, while the United Kingdom (0.002 %), Sweden (0.07 %), and France (0.08 %) virtually eliminate pre-primary dropouts. As you press “Play” or drag the year slider, observe how some nations steadily close these gaps, even as others remain
+    mired in high rates of exclusion—underscoring the urgent need for targeted education policies in hotspots like
+    <strong>Sub-Saharan Africa</strong> and <strong>South Asia</strong>.
+  </p>
+</div>
+```
+```{python}
+import pandas as pd
+import plotly.graph_objects as go
+BLUE_PALETTE = ['#03045e', '#023e8a', '#0077b6', '#0096c7', '#00b4d8',
+                '#48cae4', '#90e0ef', '#ade8f4', '#caf0f8']
+
+df = pd.read_csv("unicef_indicator_1.csv")
+df_total = df[df['sex'] == 'Total'].copy()
+df_total['time_period'] = df_total['time_period'].astype(int)
+years = sorted(df_total['time_period'].unique())
+default_year = 2019
+default_index = years.index(default_year)
+df_default = df_total[df_total['time_period'] == default_year]
+
+fig = go.Figure(data=go.Choropleth(
+    locations=df_default['alpha_3_code'],
+    z=df_default['obs_value'],
+    text=df_default['country'],
+    colorscale=BLUE_PALETTE,
+    zmin=0, zmax=100,
+    marker_line_color='#03045e',
+    marker_line_width=1.2,
+    colorbar=dict(title='Rate (%)', tickfont=dict(color="#03045e")),
+    hovertemplate='%{text}<br>Rate: %{z:.2f}%<extra></extra>'
+))
+
+fig.frames = [
+    go.Frame(
+        data=[go.Choropleth(
+            locations=df_total[df_total['time_period'] == year]['alpha_3_code'],
+            z=df_total[df_total['time_period'] == year]['obs_value'],
+            text=df_total[df_total['time_period'] == year]['country'],
+            colorscale=BLUE_PALETTE,
+            zmin=0, zmax=100,
+            marker_line_color='#03045e',
+            marker_line_width=1.2
+        )],
+        name=str(year)
+    )
+    for year in years
+]
+fig.update_layout(
+    geo=dict(
+        projection_type="orthographic",
+        showland=True,
+        landcolor='rgba(0,0,0,0)',
+        showcountries=True,
+        countrycolor="#03045e",
+        countrywidth=1.2,
+        showocean=True,
+        oceancolor='rgba(0,0,0,0)',
+        showcoastlines=True,
+        coastlinecolor="#0077b6",
+        bgcolor='rgba(0,0,0,0)'
+    ),
+    paper_bgcolor='rgba(0,0,0,0)',
+    plot_bgcolor='rgba(0,0,0,0)',
+    font=dict(color="#03045e"),
+    margin=dict(t=50, b=0, l=0, r=0),
+
+    updatemenus=[{
+        "type": "buttons",
+        "showactive": False,
+        "x": 0.1,
+        "xanchor": "right",
+        "y": 0,
+        "yanchor": "top",
+        "pad": {"r": 10, "t": 87},
+        "bgcolor": "rgba(0,0,0,0)",
+        "bordercolor": "#caf0f8",
+        "font": {"color": "#03045e"},
+        "buttons": [
+            {
+                "label": "Play",
+                "method": "animate",
+                "args": [None, {
+                    "frame": {"duration": 1000, "redraw": True},
+                    "fromcurrent": True,
+                    "transition": {"duration": 500}
+                }]
+            },
+            {
+                "label": "Pause",
+                "method": "animate",
+                "args": [[None], {
+                    "frame": {"duration": 0, "redraw": False},
+                    "mode": "immediate",
+                    "transition": {"duration": 0}
+                }]
+            }
+        ]
+    }],
+    sliders=[{
+        "active": default_index,
+        "x": 0.1,
+        "len": 0.9,
+        "xanchor": "left",
+        "y": 0,
+        "yanchor": "top",
+        "pad": {"b": 10, "t": 50},
+        "bgcolor": "#ade8f4",  
+        "bordercolor": "#0077b6",
+        "font": {"color": "#03045e"},
+        "currentvalue": {
+            "prefix": "Year: ",
+            "font": {"size": 18, "color": "#03045e"},
+            "visible": True,
+            "xanchor": "right"
+        },
+        "transition": {"duration": 300, "easing": "cubic-in-out"},
+        "steps": [{
+            "args": [[str(year)], {
+                "frame": {"duration": 300, "redraw": True},
+                "mode": "immediate",
+                "transition": {"duration": 300}
+            }],
+            "label": str(year),
+            "method": "animate"
+        } for year in years]
+    }]
+)
+
+fig.show()
+```
+# How Continental Populations Have Evolved (2014–2022)
+```{=html}
+<div class="narrative-container">
+  <p>
+    From 2014 to 2022, Asia showed an average out-of-school rate of <strong>37.1 %</strong>, despite a 1.5 % population decline, suggesting systemic barriers beyond demographic pressure.
+    North America, with 4.6 % population growth, recorded an 8.9 % out-of-school rate, while South America, growing by 5.5 %, maintained a low 0.7 % rate.
+    These contrasts highlight how population trends alone don’t dictate exclusion—policy strength and infrastructure matter more.
+  </p>
+</div>
+```
+```{python}
+
+import polars as pl
+import plotly.graph_objects as go
+import pycountry_convert as pc
+
+BLUE_PALETTE = ['#03045e', '#023e8a', '#0077b6', '#0096c7', '#00b4d8', 
+                '#48cae4', '#90e0ef', '#ade8f4', '#caf0f8']
+
+# Load metadata
+meta = pl.read_csv("unicef_metadata.csv", schema_overrides={"Population, total": pl.Float64})
+def get_continent(iso3: str) -> str:
+    try:
+        a2 = pc.country_alpha3_to_country_alpha2(iso3)
+        code = pc.country_alpha2_to_continent_code(a2)
+        return {
+            'AF': 'Africa', 'AS': 'Asia', 'EU': 'Europe',
+            'NA': 'North America', 'SA': 'South America', 'OC': 'Oceania'
+        }.get(code, 'Other')
+    except:
+        return 'Other'
+meta = meta.with_columns(
+    pl.col("alpha_3_code")
+      .map_elements(get_continent, return_dtype=pl.Utf8)
+      .alias("continent")
+)
+
+# Filter
+agg = (
+    meta.filter((pl.col("year") >= 2014) & (pl.col("year") <= 2022))
+        .group_by(["year", "continent"])
+        .agg(pl.sum("Population, total").alias("total_population"))
+        .sort(["continent", "year"])
+        .to_pandas()
+)
+
+fig = go.Figure()
+continents = agg["continent"].unique().tolist()
+for i, cont in enumerate(continents):
+    sub = agg[agg.continent == cont]
+    fig.add_trace(go.Bar(
+        x=sub.year,
+        y=sub.total_population,
+        name=cont,
+        marker_color=BLUE_PALETTE[i % len(BLUE_PALETTE)],
+        marker_line_color='#03045e',
+        marker_line_width=1,
+        opacity=0.8,
+        visible=(cont == "Europe")  
+    ))
+buttons = []
+for i, cont in enumerate(continents):
+    vis = [j == i for j in range(len(fig.data))]
+    buttons.append(dict(label=cont,
+                        method="update",
+                        args=[{"visible": vis}]))
+
+# Update layout
+fig.update_layout(
+    xaxis={
+        'title': "Year",
+        'tickmode': "linear",
+        'dtick': 1,
+        'showgrid': False,
+        'linecolor': '#0077b6',
+        'title_font': {'color': '#023e8a'},
+        'tickfont': {'color': '#0077b6'}
+    },
+    yaxis={
+        'title': "Total Population",
+        'showgrid': False,
+        'linecolor': '#0077b6',
+        'title_font': {'color': '#023e8a'},
+        'tickfont': {'color': '#0077b6'}
+    },
+    plot_bgcolor='rgba(0,0,0,0)',
+    paper_bgcolor='rgba(0,0,0,0)',
+    font={'color': '#03045e'},
+    height=500,
+    legend={
+        'bgcolor': '#e2f7fd',
+        'bordercolor': '#0077b6',
+        'borderwidth': 1
+    },
+    barmode='group',
+    hovermode='x unified',
+    margin={'t': 80, 'l': 60, 'r': 30, 'b': 60},
+    updatemenus=[dict(
+        buttons=buttons,
+        direction="down",
+        x=0.5,
+        xanchor="center",
+        y=1.1,
+        yanchor="top",
+        bgcolor='#ade8f4',
+        bordercolor='#0077b6',
+        font={'color': '#03045e'},
+        active=continents.index("Europe")
+    )]
+)
+
+fig.show()
+```
+# GDP per Capita vs. Out-of-School Rates Over Time
+```{=html}
+<div class="narrative-container">
+  <p>
+    Each bubble marks a country’s out‐of‐school rate for a given year, sized by its GDP per capita and colored on the same scale.
+    The fitted regression line reveals a significant global decline of about <strong>5.5 percentage points per year</strong> (R² ≈ 0.07, p < 0.001).
+    However, the wide dispersion around that line shows that economic wealth alone can’t explain educational exclusion—
+    some lower‐income countries outperform their peers, while a few wealthier nations still struggle.
+  </p>
+</div>
+```
+```{python}
+import pandas as pd
+import plotly.graph_objects as go
+from scipy import stats
+import numpy as np
+
+BLUE_PALETTE = ['#03045e', '#023e8a', '#0077b6', '#0096c7', '#00b4d8',
+                '#48cae4', '#90e0ef', '#ade8f4', '#caf0f8']
+
+# Load data
+df = pd.read_csv("unicef_indicator_1.csv")
+metadata = pd.read_csv("unicef_metadata.csv")
+
+# Calculate regression line
+x = df['time_period']
+y = df['obs_value']
+slope, intercept, r_value, p_value, std_err = stats.linregress(x, y)
+line = slope * x + intercept
+y_err = y - line
+ci = 1.96 * np.std(y_err) / np.sqrt(len(x))  # 95% CI
+
+country_stats = metadata.groupby('country').agg({
+    'GDP per capita (constant 2015 US$)': 'mean',
+    'Population, total': 'mean'
+}).reset_index()
+
+# Merge and clean data
+merged_df = pd.merge(df, country_stats, on='country', how='left')
+merged_df = merged_df.dropna(subset=['GDP per capita (constant 2015 US$)', 'obs_value'])
+gdp_values = merged_df['GDP per capita (constant 2015 US$)']
+gdp_normalized = (gdp_values / gdp_values.max()) * 30 + 5  # Marker size scaling
+
+fig = go.Figure()
+
+fig.add_trace(go.Scatter(
+    x=np.concatenate([x, x[::-1]]),
+    y=np.concatenate([line - ci, (line + ci)[::-1]]),
+    fill='toself',
+    fillcolor='rgba(0,119,182,0.2)',
+    line_color='rgba(255,255,255,0)',
+    name='95% Confidence Interval',
+    hoverinfo='skip'
+))
+fig.add_trace(go.Scatter(
+    x=merged_df['time_period'],
+    y=merged_df['obs_value'],
+    mode='markers',
+    name='Countries',
+    marker=dict(
+        color=merged_df['GDP per capita (constant 2015 US$)'],
+        colorscale='Blues',
+        size=gdp_normalized,
+        opacity=0.7,
+        line=dict(width=1, color=BLUE_PALETTE[0]),
+        colorbar=dict(
+            title='GDP per capita (2015 US$)',
+            title_font=dict(color=BLUE_PALETTE[0]),
+            tickfont=dict(color=BLUE_PALETTE[0]),
+            x=1.02  
+        )
+    ),
+    text=merged_df.apply(lambda row: f"{row['country']}<br>"
+                                     f"Year: {row['time_period']}<br>"
+                                     f"Rate: {row['obs_value']:.1f}%<br>"
+                                     f"GDP: ${row['GDP per capita (constant 2015 US$)']:,.0f}",
+                         axis=1),
+    hoverinfo='text'
+))
+
+fig.add_trace(go.Scatter(
+    x=x,
+    y=line,
+    mode='lines',
+    name='Regression Line',
+    line=dict(color=BLUE_PALETTE[0], width=3, dash='solid'),
+    hoverinfo='none'
+))
+
+fig.update_layout(
+
+    xaxis=dict(
+        title='<b>Year</b>',
+        showgrid=False, 
+        linecolor=BLUE_PALETTE[1],
+        title_font=dict(color=BLUE_PALETTE[0], size=14),
+        tickfont=dict(color=BLUE_PALETTE[1], size=12),
+        range=[2010, 2025]
+    ),
+    yaxis=dict(
+        title='<b>Out-of-school Rate (%)</b>',
+        showgrid=False,
+        linecolor=BLUE_PALETTE[1],
+        title_font=dict(color=BLUE_PALETTE[0], size=14),
+        tickfont=dict(color=BLUE_PALETTE[1], size=12),
+        range=[0, 100]
+    ),
+    plot_bgcolor='rgba(0,0,0,0)',  
+    paper_bgcolor='rgba(0,0,0,0)',  
+    font=dict(family='Arial'),
+    legend=dict(
+        bgcolor='rgba(255,255,255,0.7)',  
+        bordercolor=BLUE_PALETTE[1],
+        borderwidth=1,
+        font=dict(color=BLUE_PALETTE[0], size=12),
+        x=0.02,
+        y=0.98
+    ),
+    margin=dict(t=100, l=80, r=80, b=80),
+    hoverlabel=dict(
+        bgcolor='white',
+        font=dict(color=BLUE_PALETTE[0], size=12),
+        bordercolor=BLUE_PALETTE[1]
+    )
+)
+
+fig.add_annotation(
+    x=0.05,
+    y=0.15,
+    xref='paper',
+    yref='paper',
+    text=f'<b>Regression Analysis</b><br>'
+         f'Slope: {slope:.3f}% per year<br>'
+         f'R²: {r_value**2:.2f}<br>'
+         f'p-value: {p_value:.4f}',
+    showarrow=False,
+    font=dict(color=BLUE_PALETTE[0], size=12),
+    bgcolor='white',
+    bordercolor=BLUE_PALETTE[1],
+    borderwidth=1,
+    align='left'
+)
+
+
+fig.show()
+
+
+```
+# Who’s Left Behind? Boys and Girls Out-of-School Trends by Region
+```{=html}
+<div class="narrative-container">
+  <p>
+    Tracking boys and girls from 2014 through 2022 reveals persistent disparities across regions.  
+    In some continents—like <strong>Africa</strong> and <strong>Asia</strong>—girls consistently face higher exclusion,
+    often due to economic and cultural barriers. Other regions, such as <strong>Oceania</strong>, show minimal difference
+    between sexes. Use the continent dropdown to explore how these gendered trends have converged or diverged over time,
+    highlighting where targeted interventions are most needed to ensure equal access for all children.
+  </p>
+</div>
+```
+```{python}
+import polars as pl
+import plotly.graph_objects as go
+import pycountry_convert as pc
+
+df = pl.read_csv("unicef_indicator_1.csv")
+
+df = df.filter(pl.col("sex").is_in(["Male", "Female"]))
+
+def get_continent(iso3: str) -> str:
+    try:
+        a2 = pc.country_alpha3_to_country_alpha2(iso3)
+        code = pc.country_alpha2_to_continent_code(a2)
+        return {
+            'AF':'Africa','AS':'Asia','EU':'Europe',
+            'NA':'North America','SA':'South America','OC':'Oceania'
+        }.get(code, 'Other')
+    except:
+        return 'Other'
+
+df = df.with_columns(
+    pl.col("alpha_3_code")
+      .map_elements(get_continent, return_dtype=pl.Utf8)
+      .alias("continent")
+)
+
+ts = (
+    df.group_by(["time_period","sex","continent"])
+      .agg(pl.mean("obs_value").alias("avg_rate"))
+      .sort(["continent","time_period","sex"])
+      .to_pandas()
+)
+fig = go.Figure()
+continents = sorted(ts["continent"].unique())
+sexes = ["Male","Female"]
+
+europe_button_index = continents.index("Europe") + 1
+
+for cont in continents:
+    sub = ts[ts.continent == cont]
+    for sex in sexes:
+        d = sub[sub.sex == sex]
+    
+        is_visible = (cont == "Europe")
+        fig.add_trace(go.Scatter(
+            x=d.time_period,
+            y=d.avg_rate,
+            mode="lines+markers",
+            name=f"{cont} – {sex}",
+            legendgroup=sex,
+            visible=is_visible
+        ))
+
+buttons = []
+
+buttons.append(dict(
+    label="All",
+    method="update",
+    args=[{"visible": [True]*len(fig.data)}]
+))
+
+for cont in continents:
+    vis = [trace.name.startswith(cont) for trace in fig.data]
+    buttons.append(dict(
+        label=cont,
+        method="update",
+        args=[{"visible": vis}]
+    ))
+
+fig.update_layout(
+
+    yaxis=dict(
+        title="Avg Rate (%)",
+        showgrid=False,  
+        linecolor='#0077b6'  
+    ),
+    updatemenus=[dict(
+        active=europe_button_index,
+        buttons=buttons,
+        direction="down",
+        x=1.10,
+        xanchor="center",
+        y=.70,
+        yanchor="bottom"
+    )],
+    margin=dict(t=100, l=60, r=30, b=60),
+    legend_title="Trace",
+    plot_bgcolor='rgba(0,0,0,0)',  
+    paper_bgcolor='rgba(0,0,0,0)'  
+)
+
+
+fig.update_traces(line=dict(width=2))
+
+fig.show()
+```
+# Conclusion
+```{=html}
+<div class="narrative-container">
+  <p>
+    Our analysis reveals that tackling global out-of-school rates requires a multifaceted approach:
+  </p>
+  <ul>
+    <li><strong>Geographic Focus:</strong> Hotspots such as Sub-Saharan Africa and South Asia bear the highest preschool exclusion and must be prioritized.</li>
+    <li><strong>Contextual Strategies:</strong> Population size alone does not drive exclusion—effective policies and robust infrastructure are the real levers.</li>
+    <li><strong>Economic Insights:</strong> While rising GDP correlates with lower exclusion, outliers show that governance and targeted investment matter most.</li>
+    <li><strong>Gender Equity:</strong> Persistent gaps in many regions call for gender-sensitive programs to ensure both boys and girls share equal learning opportunities.</li>
+  </ul>
+  <p>
+    By combining data-driven resource allocation with community-led solutions, we can turn these insights into action and move closer to the goal of education for all.
+  </p>
+</div>
+```
+
+```{=html}
+<!-- 1) Load particles.js library -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+<script>
+particlesJS("particles-js", {
+  "particles": {
+    "number": { "value": 20, "density": { "enable": true, "value_area": 800 } },
+    "color":  { "value": "#00b4d8" },
+    "shape":  {
+      "type": "circle",
+      "stroke": { "width": 0, "color": "#000" }
+    },
+    "opacity": { "value": 0.3, "random": true },
+    "size":    { "value": 32, "random": false, "anim": { "enable": true, "speed": 10, "size_min": 40 } },
+    "line_linked": { "enable": false },
+    "move":    { "enable": true, "speed": 8, "out_mode": "out" }
+  },
+  "interactivity": { "detect_on": "canvas" },
+  "retina_detect": true
+});
+</script>
+```
