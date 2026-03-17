@@ -1,0 +1,608 @@
+---
+title: "Irish Entry-Level Job Search Agent"
+subtitle: "A Complete Guide for Early-Career Candidates in Ireland"
+format:
+    html:
+        output-file: job_search_guide.html
+        css: style.css
+        code-fold: false
+        toc: true
+        toc-title: "Guide Sections"
+        grid:
+            body-width: 950px
+        number-sections: false
+---
+
+<div id="particles-js"></div>
+
+```{=html}
+<div class="narrative-container">
+  <p>
+    This guide is designed for <strong>entry-level candidates</strong> seeking roles in the Irish job market — particularly
+    recent graduates, school leavers, career changers, and anyone with 0–1 year of professional experience.
+    Every strategy here is built around finding roles that are <em>realistically accessible</em> right now,
+    while helping you stand out by maximising your transferable skills, education, projects, and personal qualities.
+  </p>
+  <ul>
+    <li><strong>Graduate programmes</strong> — structured rotational programmes at major Irish employers</li>
+    <li><strong>Junior / entry-level roles</strong> — filtered specifically for 0–1 year experience</li>
+    <li><strong>Trainee &amp; apprenticeship routes</strong> — SOLAS and company-run schemes</li>
+    <li><strong>Irish job platforms</strong> — with exact search terms and filter settings</li>
+    <li><strong>LinkedIn recruiter outreach</strong> — a 5-step follow-up workflow</li>
+    <li><strong>Resume &amp; cover letter strategy</strong> — for minimal-experience profiles</li>
+    <li><strong>Irish salary benchmarks</strong> — gross annual figures in euros</li>
+  </ul>
+</div>
+```
+
+# Candidate Profile — Entry-Level Focus
+
+```{=html}
+<div class="narrative-container">
+  <p>
+    If you have minimal or no professional experience, <strong>this guide is for you</strong>.
+    Education, college projects, part-time work, volunteering, internships, and extracurriculars
+    are all treated as valid and valuable experience here.
+  </p>
+  <p>
+    Always prioritise roles carrying these markers when searching:
+  </p>
+  <ul>
+    <li>"entry level" / "graduate" / "junior" / "trainee"</li>
+    <li>"no experience necessary" / "full training provided"</li>
+    <li>"0–1 years" / "recent grad" / "school leaver welcome"</li>
+  </ul>
+  <p>
+    <strong>Realistic stretch roles</strong> (asking for 1–2 years experience) can also be targeted when your
+    skills closely match the job description — address the gap confidently by leading with transferable skills
+    and genuine enthusiasm.
+  </p>
+</div>
+```
+
+# Target Role Types
+
+## Graduate Programmes
+
+```{=html}
+<div class="narrative-container">
+  <p>
+    Structured 1–2 year rotational programmes run by large Irish employers and multinationals.
+    These programmes are designed specifically for people at the start of their careers.
+  </p>
+  <p><strong>Key examples:</strong></p>
+  <ul>
+    <li>AIB Graduate Programme</li>
+    <li>Bank of Ireland Graduate</li>
+    <li>Google EMEA Grad Roles</li>
+    <li>Accenture Graduate</li>
+    <li>Enterprise Ireland</li>
+    <li>Irish Civil Service Fast Stream</li>
+    <li>PwC / Deloitte / EY / KPMG graduate intakes</li>
+  </ul>
+  <p>
+    <strong>⚠️ Timing:</strong> Applications typically open <strong>September–January</strong> for the following
+    summer or autumn intake. Set calendar reminders and check GradIreland (gradireland.com) regularly.
+  </p>
+</div>
+```
+
+## Junior / Entry-Level Professional Roles
+
+```{=html}
+<div class="narrative-container">
+  <p>
+    These are the bread-and-butter entry-level postings. Search using these job title keywords:
+  </p>
+  <ul>
+    <li>Junior [Role], Assistant [Role], Associate [Role]</li>
+    <li>Coordinator, Administrator, Executive (entry)</li>
+    <li>Analyst (entry), Support Specialist</li>
+    <li>Customer Success, Sales Development Rep (SDR)</li>
+    <li>Marketing Assistant, HR Assistant, IT Support</li>
+    <li>Junior Developer, QA Tester, Data Analyst (entry)</li>
+  </ul>
+  <p>
+    Always filter your search for: <em>"0–1 years experience"</em>, <em>"no experience required"</em>,
+    or <em>"training provided"</em>.
+  </p>
+</div>
+```
+
+## Trainee and Apprenticeship Roles
+
+```{=html}
+<div class="narrative-container">
+  <p>
+    Apprenticeships and trainee schemes are excellent structured pathways with earn-while-you-learn models.
+  </p>
+  <ul>
+    <li>
+      <strong>SOLAS Apprenticeships</strong> (<a href="https://apprenticeship.ie" target="_blank">apprenticeship.ie</a>) —
+      trades, ICT, financial services, insurance
+    </li>
+    <li>
+      <strong>Teagasc Programmes</strong> — agri/food sector training
+    </li>
+    <li>
+      <strong>Company-run trainee schemes</strong> — SMEs and large employers often run their own intake cycles
+    </li>
+  </ul>
+</div>
+```
+
+## Contract and Temp Roles
+
+```{=html}
+<div class="narrative-container">
+  <p>
+    Short-term contracts and temporary roles are an excellent way to build experience quickly.
+    They are particularly valuable if you are struggling to secure a permanent role — use them as a
+    <strong>foot in the door</strong>.
+  </p>
+  <p>
+    Many permanent hires begin as temp or contract workers. Treat every contract as an extended interview.
+  </p>
+</div>
+```
+
+## SME and Startup Roles
+
+```{=html}
+<div class="narrative-container">
+  <p>
+    Small and medium Irish businesses often hire with less strict experience requirements.
+    Startups frequently hire for <strong>attitude over experience</strong> — they need adaptable, motivated people.
+  </p>
+  <p>
+    <strong>Where to find them:</strong>
+  </p>
+  <ul>
+    <li>Local County Enterprise Board listings</li>
+    <li>LinkedIn company size filters: "1–10 employees" or "11–50 employees"</li>
+    <li>IrishTech.ie / Silicon Republic job board (for tech startups)</li>
+    <li>Jobs.ie and IrishJobs.ie regional filters</li>
+  </ul>
+</div>
+```
+
+## Large Multinationals (Irish Offices)
+
+```{=html}
+<div class="narrative-container">
+  <p>
+    Many global companies operating in Ireland have dedicated graduate and entry-level pipelines:
+  </p>
+  <ul>
+    <li><strong>Tech:</strong> Google, Meta, Amazon, Microsoft, Stripe, HubSpot, Salesforce</li>
+    <li><strong>Pharma / MedTech:</strong> Pfizer, MSD, Medtronic, Johnson &amp; Johnson</li>
+    <li><strong>Professional Services:</strong> Accenture, Deloitte, PwC, EY, KPMG</li>
+    <li><strong>Financial Services:</strong> AIB, Bank of Ireland, Permanent TSB, Zurich Ireland</li>
+  </ul>
+  <p>
+    Apply directly via company careers pages <em>and</em> through GradIreland for the best coverage.
+  </p>
+</div>
+```
+
+# Irish Job Platforms — Search Strategy
+
+## LinkedIn Ireland
+
+```{=html}
+<div class="narrative-container">
+  <p>
+    <a href="https://linkedin.com/jobs" target="_blank"><strong>linkedin.com/jobs</strong></a>
+  </p>
+  <p><strong>Filters to always apply:</strong></p>
+  <ul>
+    <li>Location = <em>Ireland</em></li>
+    <li>Experience level = <em>"Entry level"</em> OR <em>"Internship"</em></li>
+    <li>Date posted = <em>Past week</em></li>
+  </ul>
+  <p><strong>Search terms:</strong> "graduate", "junior", "entry level", "no experience", "trainee", "associate"</p>
+  <p>See the <strong>LinkedIn Recruiter Follow-Up Strategy</strong> section below for how to proactively reach hiring managers.</p>
+</div>
+```
+
+## Jobs.ie
+
+```{=html}
+<div class="narrative-container">
+  <p>
+    <a href="https://jobs.ie" target="_blank"><strong>jobs.ie</strong></a>
+  </p>
+  <p><strong>Filters:</strong> Category relevant to your field | County | "Entry level" or "Graduate" keyword</p>
+  <p><strong>Strong for:</strong> admin, customer service, retail management trainee, hospitality, general office roles</p>
+  <p><strong>Tip:</strong> Set up <em>daily email alerts</em> — entry-level roles fill fast.</p>
+</div>
+```
+
+## IrishJobs.ie
+
+```{=html}
+<div class="narrative-container">
+  <p>
+    <a href="https://irishjobs.ie" target="_blank"><strong>irishjobs.ie</strong></a>
+  </p>
+  <p>Upload your CV directly to be found by recruiters searching for entry-level candidates.</p>
+  <p><strong>Search keywords:</strong> "graduate", "junior", "trainee", "no experience required"</p>
+  <p><strong>Strong for:</strong> Irish SMEs, office-based roles, regional roles outside Dublin</p>
+</div>
+```
+
+## Glassdoor Ireland
+
+```{=html}
+<div class="narrative-container">
+  <p>
+    <a href="https://glassdoor.ie" target="_blank"><strong>glassdoor.ie</strong></a>
+  </p>
+  <p>Use primarily to <strong>research companies before applying</strong> — read culture reviews, interview experiences, and salary data.</p>
+  <ul>
+    <li>Filter "Easy Apply" listings to find lower-barrier applications</li>
+    <li>Check "interview difficulty" — low-difficulty roles suit entry-level applicants well</li>
+    <li>Cross-reference listings with LinkedIn and Jobs.ie for full picture</li>
+  </ul>
+</div>
+```
+
+## Additional Irish Entry-Level Platforms
+
+```{=html}
+<div class="narrative-container">
+  <ul>
+    <li>
+      <strong>GradIreland</strong> — <a href="https://gradireland.com" target="_blank">gradireland.com</a>
+      — <em>THE</em> primary Irish graduate jobs board; graduate programmes, internships, and placements
+    </li>
+    <li>
+      <strong>Careers Portal</strong> — <a href="https://careersportal.ie" target="_blank">careersportal.ie</a>
+      — Irish-specific career guidance and entry-level job listings
+    </li>
+    <li>
+      <strong>PublicJobs.ie</strong> — <a href="https://publicjobs.ie" target="_blank">publicjobs.ie</a>
+      — civil service entry-level competitions (Clerical Officer, Executive Officer)
+    </li>
+    <li>
+      <strong>Recruit Ireland</strong> — <a href="https://recruitireland.com" target="_blank">recruitireland.com</a>
+      — good for general and trades entry roles
+    </li>
+    <li>
+      <strong>SOLAS Apprenticeships</strong> — <a href="https://apprenticeship.ie" target="_blank">apprenticeship.ie</a>
+      — trades and technical apprenticeship routes
+    </li>
+  </ul>
+</div>
+```
+
+# LinkedIn Recruiter Follow-Up Strategy
+
+```{=html}
+<div class="narrative-container">
+  <p>
+    Proactive recruiter outreach significantly increases your chance of being noticed. After identifying a role,
+    follow this 5-step workflow:
+  </p>
+</div>
+```
+
+## Step 1 — Find the Company's LinkedIn Page
+
+```{=html}
+<div class="narrative-container">
+  <ul>
+    <li>Search the company name on LinkedIn and go to their company page</li>
+    <li>Click the <strong>"People"</strong> tab</li>
+    <li>Filter by: <em>"Recruiter"</em> OR <em>"Talent Acquisition"</em> OR <em>"HR"</em> OR <em>"People &amp; Culture"</em> OR <em>"Hiring"</em></li>
+    <li>Look for titles like: Recruiter, Talent Acquisition Specialist, HR Generalist, People Partner, Campus Recruiter, Graduate Recruiter</li>
+  </ul>
+</div>
+```
+
+## Step 2 — Find the Right Recruiter
+
+```{=html}
+<div class="narrative-container">
+  <ul>
+    <li>If the job posting names a recruiter, search for them directly</li>
+    <li>On LinkedIn job postings, check if the poster's profile is shown — that is your target contact</li>
+    <li>For SMEs, the hiring manager or Managing Director may post directly — connect with them</li>
+  </ul>
+</div>
+```
+
+## Step 3 — Send a Connection Request with a Personalised Note
+
+```{=html}
+<div class="narrative-container">
+  <p><strong>Template (under 300 characters — LinkedIn's limit):</strong></p>
+  <blockquote style="border-left: 4px solid #0077b6; padding-left: 1rem; color: #03045e; font-style: italic;">
+    "Hi [Name], I recently applied for the [Job Title] role at [Company] and wanted to connect. I'm a
+    [recent graduate / entry-level candidate] with a background in [field] and am genuinely excited about
+    [something specific to the company]. Happy to share my CV. Looking forward to connecting!"
+  </blockquote>
+  <p><strong>Rules for the note:</strong></p>
+  <ul>
+    <li>Under 300 characters — keep it tight</li>
+    <li>Never beg or over-apologise for lack of experience</li>
+    <li>Mention the <em>specific role</em> — not a generic "I'm looking for a job"</li>
+    <li>Include one genuine, specific mention of the company</li>
+  </ul>
+</div>
+```
+
+## Step 4 — Follow Up After 5–7 Days
+
+```{=html}
+<div class="narrative-container">
+  <p>If your connection request is accepted but you hear nothing, send this follow-up message:</p>
+  <blockquote style="border-left: 4px solid #0077b6; padding-left: 1rem; color: #03045e; font-style: italic;">
+    "Hi [Name], thanks for connecting! I wanted to follow up on my application for [Job Title].
+    I'm very keen on the role and would love the chance to chat. Please let me know if you need anything further from me."
+  </blockquote>
+</div>
+```
+
+## Step 5 — Engage with Company Content
+
+```{=html}
+<div class="narrative-container">
+  <ul>
+    <li>Like and comment on the company's LinkedIn posts — this puts your name in front of the recruiter organically</li>
+    <li>Follow the company page and turn on notifications for new job posts</li>
+    <li>Share or engage with relevant industry content to signal professional interest</li>
+  </ul>
+</div>
+```
+
+# Resume & Application Strategy
+
+## Resume Principles for Minimal Experience
+
+```{=html}
+<div class="narrative-container">
+  <ul>
+    <li>Lead with a <strong>strong 3-line personal summary</strong>: who you are, your field, and what you bring (attitude, skills, education)</li>
+    <li>Place the <strong>Education section near the top</strong> if it is your strongest credential</li>
+    <li>Include: college projects, dissertations, part-time jobs, volunteering, sports clubs, societies, online courses</li>
+    <li>Use action verbs that signal potential: <em>developed, coordinated, assisted, contributed, organised, analysed, communicated</em></li>
+    <li>Keep to <strong>1 page</strong> — never pad to 2 pages to fill space</li>
+  </ul>
+</div>
+```
+
+## Resume Bullet Rewrite Examples
+
+```{=html}
+<div class="narrative-container">
+  <table style="width:100%; border-collapse: collapse; color: #03045e;">
+    <thead>
+      <tr style="background-color: #0077b6; color: white;">
+        <th style="padding: 8px; text-align: left; width: 50%;">Original (weak)</th>
+        <th style="padding: 8px; text-align: left; width: 50%;">Improved (strong)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background-color: rgba(255,255,255,0.3);">
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">Helped at a charity event</td>
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">Coordinated logistics for a 200-person charity fundraiser, contributing to €5,000 raised for local causes</td>
+      </tr>
+      <tr style="background-color: rgba(255,255,255,0.15);">
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">Did a college project on marketing</td>
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">Developed a digital marketing strategy for a mock SME as part of a final-year group project, achieving distinction grade</td>
+      </tr>
+      <tr style="background-color: rgba(255,255,255,0.3);">
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">Worked part-time in a shop</td>
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">Delivered customer service in a fast-paced retail environment, handling cash, resolving queries, and maintaining stock accuracy</td>
+      </tr>
+      <tr style="background-color: rgba(255,255,255,0.15);">
+        <td style="padding: 8px;">Was treasurer of a college society</td>
+        <td style="padding: 8px;">Managed a €3,000 annual budget as society treasurer, overseeing expenditure tracking and supplier negotiations</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+```
+
+## ATS Keywords for Irish Entry-Level Roles
+
+```{=html}
+<div class="narrative-container">
+  <p>Add relevant keywords from this list to your resume and cover letter where genuine:</p>
+  <ul>
+    <li>"recent graduate" | "entry level" | "eager to learn" | "fast learner"</li>
+    <li>"team player" | "customer-focused" | "detail-oriented" | "adaptable" | "motivated"</li>
+    <li>"Microsoft Office" | "communication skills" | "problem solving"</li>
+  </ul>
+</div>
+```
+
+## Cover Letter — Irish Entry-Level Tone
+
+```{=html}
+<div class="narrative-container">
+  <p><strong>Structure: 3 short paragraphs</strong></p>
+  <ul>
+    <li><strong>Para 1:</strong> Who you are and why <em>this specific company</em></li>
+    <li><strong>Para 2:</strong> What you bring — lead with transferable skills and enthusiasm, not apologies for limited experience</li>
+    <li><strong>Para 3:</strong> Call to action — express eagerness for an interview</li>
+  </ul>
+  <p><strong>Never:</strong></p>
+  <ul>
+    <li>Start with <em>"I am writing to apply for..."</em> — too generic</li>
+    <li>Write <em>"I know I don't have much experience but..."</em> — reframe positively instead</li>
+  </ul>
+</div>
+```
+
+# Irish Salary Benchmarks — Entry Level
+
+```{=html}
+<div class="narrative-container">
+  <p>All figures are <strong>gross annual salary in euros (€)</strong>, Irish market rates.</p>
+  <table style="width:100%; border-collapse: collapse; color: #03045e;">
+    <thead>
+      <tr style="background-color: #0077b6; color: white;">
+        <th style="padding: 10px; text-align: left;">Role</th>
+        <th style="padding: 10px; text-align: left;">Irish Range (€)</th>
+        <th style="padding: 10px; text-align: left;">Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background-color: rgba(255,255,255,0.3);">
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">Graduate Programme (large company / multinational)</td>
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">€28,000 – €38,000</td>
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">Often includes benefits package</td>
+      </tr>
+      <tr style="background-color: rgba(255,255,255,0.15);">
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">Junior Admin / Coordinator</td>
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">€24,000 – €30,000</td>
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">—</td>
+      </tr>
+      <tr style="background-color: rgba(255,255,255,0.3);">
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">Customer Service / Support</td>
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">€24,000 – €28,000</td>
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">—</td>
+      </tr>
+      <tr style="background-color: rgba(255,255,255,0.15);">
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">Junior Developer / IT Support</td>
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">€28,000 – €38,000</td>
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">Higher end for development roles</td>
+      </tr>
+      <tr style="background-color: rgba(255,255,255,0.3);">
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">Sales Development Rep (SDR)</td>
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">€25,000 – €32,000 + commission</td>
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">OTE can push total significantly higher</td>
+      </tr>
+      <tr style="background-color: rgba(255,255,255,0.15);">
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">Marketing Assistant</td>
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">€24,000 – €29,000</td>
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">—</td>
+      </tr>
+      <tr style="background-color: rgba(255,255,255,0.3);">
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">HR Assistant</td>
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">€24,000 – €30,000</td>
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">—</td>
+      </tr>
+      <tr style="background-color: rgba(255,255,255,0.15);">
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">Junior Data Analyst</td>
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">€28,000 – €35,000</td>
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">—</td>
+      </tr>
+      <tr style="background-color: rgba(255,255,255,0.3);">
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">Civil Service Clerical Officer</td>
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">€26,000 – €30,000</td>
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">Scale-based; apply via PublicJobs.ie</td>
+      </tr>
+      <tr style="background-color: rgba(255,255,255,0.15);">
+        <td style="padding: 8px;">Trainee / Apprentice</td>
+        <td style="padding: 8px;">€18,000 – €26,000</td>
+        <td style="padding: 8px;">Varies by sector; rises on progression</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+```
+
+# Company Size Strategy
+
+```{=html}
+<div class="narrative-container">
+  <p>Target <strong>all company sizes</strong> — not just the big names. Each tier has different advantages for entry-level candidates:</p>
+  <table style="width:100%; border-collapse: collapse; color: #03045e;">
+    <thead>
+      <tr style="background-color: #0077b6; color: white;">
+        <th style="padding: 10px; text-align: left;">Company Size</th>
+        <th style="padding: 10px; text-align: left;">Key Advantage</th>
+        <th style="padding: 10px; text-align: left;">Where to Find</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background-color: rgba(255,255,255,0.3);">
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;"><strong>Startups</strong> (1–10 staff)</td>
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">Most flexible on experience; hire for attitude</td>
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">LinkedIn size filter, IrishTech.ie, Silicon Republic</td>
+      </tr>
+      <tr style="background-color: rgba(255,255,255,0.15);">
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;"><strong>SMEs</strong> (11–250 staff)</td>
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">Less competitive than multinationals; 99% of Irish businesses</td>
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">IrishJobs.ie, Jobs.ie, local recruitment agencies</td>
+      </tr>
+      <tr style="background-color: rgba(255,255,255,0.3);">
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;"><strong>Large Irish companies</strong> (250+ staff)</td>
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">Structured entry programmes; brand-name experience</td>
+        <td style="padding: 8px; border-bottom: 1px solid #90e0ef;">AIB, Bank of Ireland, Dunnes Stores, Musgrave, CRH, Kerry Group</td>
+      </tr>
+      <tr style="background-color: rgba(255,255,255,0.15);">
+        <td style="padding: 8px;"><strong>Multinationals</strong> (Irish offices)</td>
+        <td style="padding: 8px;">Large graduate intakes; strong benefits</td>
+        <td style="padding: 8px;">GradIreland + company careers pages directly</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+```
+
+# Key Principles
+
+```{=html}
+<div class="narrative-container">
+  <ul>
+    <li>Never suggest roles requiring 2+ years of experience as primary recommendations</li>
+    <li>Always lead with what you <strong>HAVE</strong>, not what you lack</li>
+    <li>All salaries are in euros (€), Irish market rates only</li>
+    <li>Flag work permit requirements if relevant (EU/EEA, stamps, permits)</li>
+    <li>If a role is a stretch, say so clearly and prepare a gap-bridging plan</li>
+    <li>Always follow up on applications using the LinkedIn recruiter workflow above</li>
+    <li>Ask yourself one clarifying question at a time to keep your search focused and actionable</li>
+  </ul>
+</div>
+```
+
+# Getting Started — Your Action Plan
+
+```{=html}
+<div class="narrative-container">
+  <p>Before building your personalised search plan, answer these four questions:</p>
+  <ol>
+    <li>Are you <strong>based in Ireland</strong> or planning to relocate? Which county or city do you prefer?</li>
+    <li>Do you have <strong>full right to work in Ireland</strong> (EU/EEA, stamp, or permit)?</li>
+    <li>Are you open to <strong>remote, hybrid, or on-site</strong> roles — or all three?</li>
+    <li>Is there a <strong>specific field or industry</strong> you want to work in, or are you open to any entry-level role?</li>
+  </ol>
+  <p>
+    Once you have these answers, use the platform strategies and role categories above to build a targeted
+    weekly search routine. Set up email alerts on Jobs.ie and IrishJobs.ie, activate LinkedIn notifications,
+    and block time each week for recruiter outreach.
+  </p>
+  <p>
+    <strong>Remember:</strong> Entry-level job searching in Ireland is a numbers game combined with quality outreach.
+    The candidates who succeed apply consistently, follow up professionally, and present their potential — not their gaps.
+  </p>
+</div>
+```
+
+```{=html}
+<!-- Load particles.js library -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+<script>
+particlesJS("particles-js", {
+  "particles": {
+    "number": { "value": 20, "density": { "enable": true, "value_area": 800 } },
+    "color":  { "value": "#00b4d8" },
+    "shape":  {
+      "type": "circle",
+      "stroke": { "width": 0, "color": "#000" }
+    },
+    "opacity": { "value": 0.3, "random": true },
+    "size":    { "value": 32, "random": false, "anim": { "enable": true, "speed": 10, "size_min": 40 } },
+    "line_linked": { "enable": false },
+    "move":    { "enable": true, "speed": 8, "out_mode": "out" }
+  },
+  "interactivity": { "detect_on": "canvas" },
+  "retina_detect": true
+});
+</script>
+```
